@@ -1,9 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
+const {
+  ResidentProfiling,
+  FindAllResident,
+  UpdateResident,
+  DeleteResident,
+} = require("../controllers/ResidentController");
 
-const {ResidentProfiling  }  = require("../controllers/ResidentController");
-
-router.post('/profiling', ResidentProfiling);
+//Routers
+router
+  .route("/")
+  .get(FindAllResident)
+  .post(ResidentProfiling)
+  .patch(UpdateResident)
+  .delete(DeleteResident);
 
 module.exports = router;

@@ -7,6 +7,7 @@ require('dotenv').config();
 const authRouter = require('./routers/AuthRouter');
 const residentRouter = require('./routers/ResidentRouter');
 
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
@@ -16,6 +17,6 @@ app.use('/api/resident', residentRouter)
 app.get('/', (req, res)=> res.send('Home'))
 
 
-
+//Starting the port
 const port = process.env.PORT || 8080;
 app.listen(port, ()=> console.log(`Server is listening on port ${port}`));

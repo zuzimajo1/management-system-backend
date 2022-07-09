@@ -2,6 +2,10 @@ module.exports = (sequelize, DataTypes) => {
   const ResidentModel = sequelize.define(
     "residents",
     {
+      image: {
+        type: DataTypes.STRING(1234),
+        allowNull: false,
+      },
       firstname: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -23,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       Birthdate: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING(1234),
         allowNull: false,
       },
       Sex: {
@@ -61,6 +65,5 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-    return ResidentModel;
-
+  return ResidentModel;
 };
