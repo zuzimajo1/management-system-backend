@@ -18,31 +18,43 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      purokNo: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      Sitio: {
+      suffix:{
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
-      Birthdate: {
+      address:{
+        type: DataTypes.STRING,
+        allowNull : false,
+      },
+      birthdate: {
         type: DataTypes.STRING(1234),
         allowNull: false,
       },
-      Sex: {
+      birthplace:{
+        type: DataTypes.STRING(1234),
+        allowNull: false,
+      },
+      sex: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      CivilStatus: {
+      civilstatus: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      Citizenship: {
+      parentsname:{
+        type: DataTypes.STRING(1234),
+        allowNull: false,
+      },
+      siblingsname:{
+        type: DataTypes.STRING(1234),
+        allowNull: false,
+      },
+      citizenship: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      Occupation: {
+      occupation: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -50,12 +62,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
-      FourPSMember: {
+      fourpsmember: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
       },
-      RegisterVoter: {
+      registervoter: {
         type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      occupancystatus:{
+        type: DataTypes.STRING,
         allowNull: false,
       },
     },

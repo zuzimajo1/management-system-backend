@@ -6,6 +6,7 @@ const {
   FindAllResident,
   UpdateResident,
   DeleteResident,
+  FindSingleResident,
 } = require("../controllers/ResidentController");
 
 //Routers
@@ -14,6 +15,10 @@ router
   .get(FindAllResident)
   .post(ResidentProfiling)
   .patch(UpdateResident)
-  .delete(DeleteResident);
+
+router.route("/:id").delete(DeleteResident)
+
+router.route("/find").get(FindSingleResident);
+
 
 module.exports = router;
