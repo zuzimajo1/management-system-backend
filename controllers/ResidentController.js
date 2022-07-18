@@ -53,17 +53,16 @@ const FindSingleResident = async (req, res) => {
   try {
     const finddata = await Resident.findOne({
       where: {
-        [Op.and]: [
-          { firstname: req.query.firstname },
-          { lastname: req.query.lastname },
-        ],
-      },
+           fullname: req.query.fullname ,
+      }
     });
     res.status(200).json(finddata);
   } catch (error) {
     res.status(500).json(error);
   }
 };
+
+
 
 module.exports = {
   ResidentProfiling,

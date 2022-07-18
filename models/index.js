@@ -23,7 +23,7 @@ db.auth = require("./AuthModel")(sequelize, DataTypes)
 db.residents = require("./ResidentModel")(sequelize, DataTypes);
 db.events = require("./EventModel")(sequelize, DataTypes);
 
-// db.events.sync({force: true}).then(()=> console.log("Drop and re-sync db"));
+// db.residents.sync({force: true}).then(()=> console.log("Drop and re-sync db"));
 // db.sequelize.sync({force: false}).then(()=> console.log("Drop and re-sync db"))
 
 
