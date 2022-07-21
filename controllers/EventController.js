@@ -57,9 +57,9 @@ const FindSingleEvent = async (req, res)=>{
                 },
               },
               {
-                //the end must be greater than or equal to today's date
+                //the end must be greater than to today's date
                 end: {
-                  [Op.gte]: dayjs(date).format("YYYY-MM-DD"),
+                  [Op.gt]: dayjs(date).format("YYYY-MM-DD"),
                 },
               },
             ],
