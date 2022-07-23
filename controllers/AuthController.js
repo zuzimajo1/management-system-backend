@@ -29,7 +29,7 @@ const Login = async (req, res) => {
   try {
     const loginUser = await Auth.findOne({ //find the data if the username matches
       where: {
-        username: req.body.username,
+        username: req.query.username,
       },
     });
 
@@ -42,7 +42,7 @@ const Login = async (req, res) => {
 
       const InputPassword = PasswordDecrypt.toString(cryptoJS.enc.Utf8);
 
-      if (InputPassword === req.body.password) {
+      if (InputPassword === req.query.password) {
         const { password, ...others } = loginUser.dataValues;
         return res.status(200).json({ ...others }); //to hide the password
       } else {

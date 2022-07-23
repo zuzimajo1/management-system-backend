@@ -53,7 +53,7 @@ const FindSingleResident = async (req, res) => {
   try {
     const finddata = await Resident.findOne({
       where: {
-           fullname: req.query.fullname ,
+           fullname: req.query.fullname
       }
     });
     res.status(200).json(finddata);

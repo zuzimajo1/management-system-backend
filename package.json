@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd management-system && npm run electron-react"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.3.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.3",
